@@ -1,0 +1,27 @@
+{
+  "name": "anb.schedule.notifications",
+  "version": "0.0.1",
+  "description": "Schedule Instant Notifications",
+  "cordova": {
+    "id": "anb.schedule.notifications",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZarishIqbal/cordova-schedule-notifications.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "author": "Zarish Iqbal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZarishIqbal/cordova-schedule-notifications/issues"
+  },
+  "homepage": "https://github.com/ZarishIqbal/cordova-schedule-notifications#readme"
+}

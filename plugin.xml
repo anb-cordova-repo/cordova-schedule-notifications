@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="anb.schedule.notifications" version="0.0.1"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>ScheduleNotifications</name>
+    <js-module name="ScheduleNotifications" src="www/ScheduleNotifications.js">
+        <clobbers target="cordova.plugins.ScheduleNotifications" />
+    </js-module>
+
+    <platform name="android">
+        <config-file parent="/*" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+
+        </config-file>
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="ScheduleNotifications">
+                <param name="android-package" value="anb.schedule.notifications.ScheduleNotifications" />
+            </feature>
+        </config-file>
+
+        <config-file parent="/*" target="AndroidManifest.xml" />
+        <source-file src="src/android/ScheduleNotifications.java" target-dir="src/anb/schedule/notifications/ScheduleNotifications" />
+        <source-file src="src/android/CustomExceptionHandler.java" target-dir="src/anb/schedule/notifications/ScheduleNotifications" />
+        <resource-file src="src/android/logo.png" target="res/drawable-ldpi-v4/pw_notification.png" />
+
+    </platform>
+
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="ScheduleNotifications">
+                <param name="ios-package" value="ScheduleNotifications" />
+            </feature>
+        </config-file>
+        <source-file src="src/ios/ScheduleNotifications.m" />
+    </platform>
+</plugin>
