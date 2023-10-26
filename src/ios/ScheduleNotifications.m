@@ -100,6 +100,9 @@ void uncaughtExceptionHandler(NSException *exception) {
   _delegate = _center.delegate;
 
   _center.delegate = self;
+
+  //call requestPermission to register for remote notifications
+  [self requestPermission:nil];
 }
 
 @end

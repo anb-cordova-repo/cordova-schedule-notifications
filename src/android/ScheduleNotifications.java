@@ -41,6 +41,20 @@ public class ScheduleNotifications extends CordovaPlugin {
   }
 
   @Override
+  protected void pluginInitialize() {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+      // Create a notification channel for Android 8.0 and above
+      createNotificationChannel();
+
+      if (!NotificationManagerCompat.from(context).areNotificationsEnabled()) {
+        Intent intent = new Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS);
+        intent.putExtra(Settings.EXTRA_APP_PACKAGE, context.getPackageName());
+        context.startActivity(intent);
+      }
+    }
+  }
+
+  @Override
   public boolean execute(
     String action,
     JSONArray args,
